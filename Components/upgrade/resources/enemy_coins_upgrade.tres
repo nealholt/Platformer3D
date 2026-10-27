@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bbo85vqc78tdd"]
+
+[ext_resource type="Texture2D" uid="uid://dc1i6i00ekj4j" path="res://Assets/kenney_board-game-icons/tokens.png" id="1_br5ia"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="1_uj35y"]
+
+[resource]
+script = ExtResource("1_uj35y")
+upgrade_type = 4
+help_text = "Enemies now drop coins\\nwhen squashed"
+image = ExtResource("1_br5ia")
+text = "Enemy Coins"
+color = Color(0.65707266, 0.6348225, 0, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

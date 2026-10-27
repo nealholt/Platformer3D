@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://b27vwya0diix7"]
+
+[ext_resource type="Texture2D" uid="uid://cs6m1io50gw43" path="res://Assets/kenney_board-game-icons/fire.png" id="1_x80pm"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_vqr6t"]
+
+[resource]
+script = ExtResource("2_vqr6t")
+upgrade_type = 1
+help_text = "Hold control, shift, or left\\nmouse button to sprint"
+image = ExtResource("1_x80pm")
+text = "Sprint"
+color = Color(0.97677666, 0.14152205, 0.99999994, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

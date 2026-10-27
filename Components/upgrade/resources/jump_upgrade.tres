@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://estp15die20h"]
+
+[ext_resource type="Texture2D" uid="uid://odmvfpmgqy2q" path="res://Assets/kenney_board-game-icons/pawn_up.png" id="1_o0asb"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_0swq5"]
+
+[resource]
+script = ExtResource("2_0swq5")
+amount = 8.0
+help_text = "Spacebar to jump\\nTake a running start"
+image = ExtResource("1_o0asb")
+text = "Jump"
+color = Color(1, 1, 0.5372549, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

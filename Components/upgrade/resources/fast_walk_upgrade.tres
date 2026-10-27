@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://cqm5tfk24eaqc"]
+
+[ext_resource type="Texture2D" uid="uid://bogygctmqfjgs" path="res://Assets/kenney_board-game-icons/timer_CCW_75.png" id="1_ul2qh"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_et1kw"]
+
+[resource]
+script = ExtResource("2_et1kw")
+upgrade_type = 3
+amount = 3.0
+help_text = "Walk speed increased"
+image = ExtResource("1_ul2qh")
+text = "Faster"
+color = Color(0.9999916, 0.41176122, 0.29598933, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

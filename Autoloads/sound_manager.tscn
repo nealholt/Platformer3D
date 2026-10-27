@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bnfrj6xgptvu8"]
+
+[ext_resource type="AudioStream" uid="uid://cxf40ahqdv67p" path="res://Assets/SoundEffects/enemy-lose4.ogg" id="1_jerlu"]
+[ext_resource type="Script" uid="uid://c3gljgpntbqs2" path="res://Autoloads/sound_manager.gd" id="1_u5vrn"]
+[ext_resource type="AudioStream" uid="uid://dl7jt8rdelfpt" path="res://Assets/audio_leshy_labs/gain.wav" id="3_es10o"]
+[ext_resource type="AudioStream" uid="uid://dugwovnv8owyr" path="res://Assets/SoundEffects/fall-gameover2.ogg" id="4_7v15h"]
+[ext_resource type="AudioStream" uid="uid://6rka4ip1bq57" path="res://Assets/kenney_space-shooter-redux/sfx_twoTone.ogg" id="5_nh2do"]
+[ext_resource type="AudioStream" uid="uid://dvhhyoi28ki00" path="res://Assets/kenney Donation version 1b/powerUp_000.ogg" id="6_es10o"]
+[ext_resource type="AudioStream" uid="uid://bv5boectmq2ms" path="res://Assets/Music/Menu-RetroMystic.ogg" id="6_uukhq"]
+[ext_resource type="AudioStream" uid="uid://vmdwasxgy8ey" path="res://Assets/Music/Level-RetroBeat.ogg" id="7_nh2do"]
+[ext_resource type="AudioStream" uid="uid://pkamckfoiqyq" path="res://Assets/kenney Donation version 1b/whoosh_medium_004.ogg" id="7_om77l"]
+
+[node name="SoundManager" type="Control" unique_id=1945775151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u5vrn")
+
+[node name="SoundEnemy" type="AudioStreamPlayer" parent="." unique_id=400781149]
+stream = ExtResource("1_jerlu")
+volume_db = -12.0
+
+[node name="SoundCoin" type="AudioStreamPlayer" parent="." unique_id=1683717276]
+stream = ExtResource("3_es10o")
+volume_db = -8.0
+
+[node name="SoundFall" type="AudioStreamPlayer" parent="." unique_id=1298572876]
+stream = ExtResource("4_7v15h")
+volume_db = -5.0
+
+[node name="SoundButton" type="AudioStreamPlayer" parent="." unique_id=1510155750]
+stream = ExtResource("5_nh2do")
+
+[node name="SoundUpgrade" type="AudioStreamPlayer" parent="." unique_id=1578604604]
+stream = ExtResource("6_es10o")
+volume_db = -3.0
+
+[node name="SoundWhoosh" type="AudioStreamPlayer" parent="." unique_id=963288812]
+stream = ExtResource("7_om77l")
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=1245914292]
+stream = ExtResource("6_uukhq")
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="." unique_id=1044314309]
+stream = ExtResource("7_nh2do")
+volume_db = -8.0

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://uwec8tbesdib"]
+
+[ext_resource type="Texture2D" uid="uid://y1224wccm78u" path="res://Assets/kenney_board-game-icons/exploding.png" id="1_hm3wq"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_rnulm"]
+
+[resource]
+script = ExtResource("2_rnulm")
+upgrade_type = 5
+help_text = "Step into the air and\\nsky walk for a second"
+image = ExtResource("1_hm3wq")
+text = "Sky Walk"
+color = Color(0.32621363, 0.5656012, 0.9049969, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

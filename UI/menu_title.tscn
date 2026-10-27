@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://i0ourif7i1sc"]
+
+[ext_resource type="Texture2D" uid="uid://b14utxpw1rptp" path="res://Assets/Images/image-screen-title.png" id="1_2qvb8"]
+[ext_resource type="Script" uid="uid://cvr8wpg830tup" path="res://UI/menu.gd" id="1_mskfe"]
+
+[node name="MenuTitle" type="Control" unique_id=1995279656 node_paths=PackedStringArray("play_button", "level_buttons", "reset_high_scores")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mskfe")
+play_button = NodePath("VBoxContainer/PlayButton")
+level_buttons = [NodePath("VBoxContainer/Level0Button"), NodePath("VBoxContainer/Level1Button"), NodePath("VBoxContainer/Level2Button")]
+reset_high_scores = NodePath("VBoxContainer/ResetProgress")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2057207604]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 1160.0
+offset_bottom = 657.0
+color = Color(0.120241694, 0.023500005, 0.47, 1)
+
+[node name="Label" type="Label" parent="." unique_id=227150533]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 77.99999
+offset_right = 1038.0
+offset_bottom = 215.0
+rotation = -0.08547548
+theme_override_colors/font_color = Color(1, 0.33333334, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.92156863, 0.77254903, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 80
+text = "3D PLATFORMER GAME!"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=552593992]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 63.0
+offset_right = 1118.0
+offset_bottom = 764.0
+texture = ExtResource("1_2qvb8")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1841100823]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 150.0
+offset_right = 985.0
+offset_bottom = 657.0
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=31097806]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
+text = "PLAY"
+flat = true
+
+[node name="Level0Button" type="Button" parent="VBoxContainer" unique_id=1603883509]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Level 1"
+flat = true
+
+[node name="Level1Button" type="Button" parent="VBoxContainer" unique_id=1792015434]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Level 2"
+flat = true
+
+[node name="Level2Button" type="Button" parent="VBoxContainer" unique_id=529583820]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 50
+text = "Level 3"
+flat = true
+
+[node name="FullscreenButton" type="CheckButton" parent="VBoxContainer" unique_id=926133053]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_colors/button_checked_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/button_unchecked_color = Color(0.3403393, 0.34033933, 0.3403393, 1)
+button_pressed = true
+text = "Fullscreen"
+
+[node name="ResetProgress" type="Button" parent="VBoxContainer" unique_id=151084163]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 40
+text = "Reset Progress"
+flat = true
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=55180781]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
+text = "exit"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_load_level" binds= [0]]
+[connection signal="pressed" from="VBoxContainer/Level0Button" to="." method="_load_level" binds= [0]]
+[connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_load_level" binds= [1]]
+[connection signal="pressed" from="VBoxContainer/Level2Button" to="." method="_load_level" binds= [2]]
+[connection signal="pressed" from="VBoxContainer/FullscreenButton" to="." method="_on_toggle_fullscreen_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResetProgress" to="." method="_on_reset_progress_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_close_game"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://bmqsmonyusium"]
+
+[ext_resource type="Texture2D" uid="uid://dw2pp0f2sq618" path="res://Assets/kenney_board-game-icons/arrow_reserve.png" id="1_325d3"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_06th2"]
+
+[resource]
+script = ExtResource("2_06th2")
+upgrade_type = 6
+help_text = "ad keys or left right arrow key\\nmovement enabled"
+image = ExtResource("1_325d3")
+text = "Side-to-Side"
+color = Color(1, 0.5568628, 0, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

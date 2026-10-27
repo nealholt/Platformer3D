@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dskxk26mjt714"]
+
+[ext_resource type="Texture2D" uid="uid://b2tqfrkrxwtvt" path="res://Assets/kenney_board-game-icons/arrow_rotate.png" id="1_fwpyv"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_qtyup"]
+
+[resource]
+script = ExtResource("2_qtyup")
+upgrade_type = 8
+help_text = "Mouse now moves the\\ncamera and player moves\\nrelative to camera direction"
+image = ExtResource("1_fwpyv")
+text = "Camera Rotate"
+color = Color(0.7039985, 0.18523547, 0.69418484, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

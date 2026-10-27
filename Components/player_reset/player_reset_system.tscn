@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bmakf3f6p5utl"]
+
+[ext_resource type="Script" uid="uid://d2ucp4mv0u24j" path="res://Components/player_reset/player_reset_system.gd" id="1_cwp7l"]
+
+[node name="PlayerResetSystem" type="Node" unique_id=456618431]
+script = ExtResource("1_cwp7l")
+
+[node name="Timer" type="Timer" parent="." unique_id=698649362]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

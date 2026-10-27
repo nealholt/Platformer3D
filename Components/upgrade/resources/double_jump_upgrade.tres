@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://dnlnx42a0h63t"]
+
+[ext_resource type="Texture2D" uid="uid://5pckvgdcx3mh" path="res://Assets/kenney_board-game-icons/character_lift.png" id="1_ucavd"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_3jcj8"]
+
+[resource]
+script = ExtResource("2_3jcj8")
+upgrade_type = 2
+help_text = "Double jump!\\nspacebar in mid air"
+image = ExtResource("1_ucavd")
+text = "Double Jump"
+color = Color(1, 1, 0.21176471, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

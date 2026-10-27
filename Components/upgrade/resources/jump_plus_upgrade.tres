@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://76w8syp31n86"]
+
+[ext_resource type="Texture2D" uid="uid://odmvfpmgqy2q" path="res://Assets/kenney_board-game-icons/pawn_up.png" id="1_0sg58"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_f61un"]
+
+[resource]
+script = ExtResource("2_f61un")
+upgrade_type = 9
+amount = 4.0
+help_text = "More powerful jump"
+image = ExtResource("1_0sg58")
+text = "Power Jump"
+color = Color(1, 0.74509805, 0, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

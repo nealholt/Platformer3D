@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b8p7coqrcfdq7"]
+
+[ext_resource type="Script" uid="uid://d1mnja3f666as" path="res://Levels/level.gd" id="1_ku5x2"]
+[ext_resource type="Environment" uid="uid://cnm2evtwreyiq" path="res://Resources/level1_environment.tres" id="2_ddaal"]
+[ext_resource type="PackedScene" uid="uid://bw27whvsjb8mh" path="res://Components/player/player.tscn" id="3_gxk0f"]
+[ext_resource type="MeshLibrary" uid="uid://d2ojwfm106ke8" path="res://Resources/world-blocks-v1.tres" id="4_xlufh"]
+[ext_resource type="PackedScene" uid="uid://bxleayww3wsyy" path="res://Components/coins/coin.tscn" id="5_6ieip"]
+[ext_resource type="PackedScene" uid="uid://c8rqgoojfpymj" path="res://UI/hud.tscn" id="6_w54qd"]
+[ext_resource type="PackedScene" uid="uid://blatx2hqd3cb2" path="res://Components/enemies/enemy.tscn" id="7_p5spi"]
+[ext_resource type="PackedScene" uid="uid://coadxo4n2hbd6" path="res://Components/upgrade/upgrade.tscn" id="8_w0slw"]
+
+[node name="LevelTest" type="Node3D" unique_id=1785903765]
+script = ExtResource("1_ku5x2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=991419786]
+transform = Transform3D(1, 0, 0, 0, 0.50681144, 0.862057, 0, -0.862057, 0.50681144, 0, 3.7663813, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=54164322]
+environment = ExtResource("2_ddaal")
+
+[node name="Player" parent="." unique_id=1949515906 instance=ExtResource("3_gxk0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.466187, 0.6256442, 1.8330097)
+
+[node name="Blocks" type="Node3D" parent="." unique_id=402129144]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=967928548]
+mesh_library = ExtResource("4_xlufh")
+collision_layer = 2
+collision_mask = 13
+data = {
+"cells": PackedInt32Array(-3, 65531, 0, -3, 65532, 0, -3, 65533, 0, -3, 65534, 0, -3, 65535, 0, -3, 0, 0, -3, 1, 0, -3, 2, 0, -3, 3, 0, -2, 65531, 0, -2, 65532, 0, -2, 65533, 0, -2, 65534, 0, -2, 65535, 0, -2, 0, 0, -2, 1, 0, -2, 2, 0, -2, 3, 0, -1, 65531, 0, -1, 65532, 0, -1, 65533, 0, -1, 65534, 0, -1, 65535, 0, -1, 0, 0, -1, 1, 0, -1, 2, 0, -1, 3, 0, -65536, 65531, 0, -65536, 65532, 0, -65536, 65533, 0, -65536, 65534, 0, -65536, 65535, 0, -65536, 0, 0, -65536, 1, 0, -65536, 2, 0, -65536, 3, 0, -65535, 65531, 0, -65535, 65532, 0, -65535, 65533, 0, -65535, 65534, 0, -65535, 65535, 0, -65535, 0, 0, -65535, 1, 0, -65535, 2, 0, -65535, 3, 0, -65534, 65531, 0, -65534, 65532, 0, -65534, 65533, 0, -65534, 65534, 0, -65534, 65535, 0, -65534, 0, 0, -65534, 1, 0, -65534, 2, 0, -65534, 3, 0, -65533, 65531, 0, -65533, 65532, 0, -65533, 65533, 0, -65533, 65534, 0, -65533, 65535, 0, -65533, 0, 0, -65533, 1, 0, -65533, 2, 0, -65533, 3, 0, -65532, 65531, 0, -65532, 65532, 0, -65532, 65533, 0, -65532, 65534, 0, -65532, 65535, 0, -65532, 0, 0, -65532, 1, 0, -65532, 2, 0, -65532, 3, 0, -65531, 65531, 655365, -65531, 65532, 655365, -65531, 65533, 655365, -65531, 65534, 655365, -65531, 65535, 655365, -65531, 0, 655365, -65531, 1, 655365, -65531, 2, 655365, -65531, 3, 655365, -4, 3, 5, -4, 2, 5, -4, 1, 5, -4, 0, 5, -4, 65535, 655360, -4, 65533, 5, -4, 65531, 5, -4, 65532, 5, -4, 4, 1048582, -4, 65530, 6, -65531, 65530, 1441798, -65531, 4, 655366, -3, 4, 1048581, -2, 4, 1048581, -65536, 4, 0, -65535, 4, 0, -1, 4, 1048581, -65534, 4, 0, -65532, 4, 1048581, -65533, 4, 1048581, -3, 65530, 1441797, -2, 65530, 1441797, -1, 65530, 1441797, -65536, 65530, 1441797, -65535, 65530, 1441797, -65534, 65530, 1441797, -65533, 65530, 1441797, -65532, 65530, 1441797, -4, 65534, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Coins" type="Node3D" parent="." unique_id=1109782903]
+
+[node name="Coin1" parent="Coins" unique_id=516780755 instance=ExtResource("5_6ieip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.301155, 0.6681235, -0.8165369)
+
+[node name="HUD" parent="." unique_id=1294954581 instance=ExtResource("6_w54qd")]
+
+[node name="Enemies" type="Node3D" parent="." unique_id=1184860927]
+
+[node name="Enemy" parent="Enemies" unique_id=1282860180 instance=ExtResource("7_p5spi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.8996654, 0.2, -10.280113)
+direction = Vector3(-1, 0, 0)
+
+[node name="MovingPlatforms" type="Node3D" parent="." unique_id=1236959359]
+
+[node name="Upgrades" type="Node3D" parent="." unique_id=350395553]
+
+[node name="Upgrade" parent="Upgrades" unique_id=1351516160 instance=ExtResource("8_w0slw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -3)

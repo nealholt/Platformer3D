@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://suemyu7yjojc"]
+
+[ext_resource type="Texture2D" uid="uid://7geqpmrydyxn" path="res://Assets/Images/image-screen-gameover.png" id="1_jawqf"]
+[ext_resource type="Script" uid="uid://cvr8wpg830tup" path="res://UI/menu.gd" id="1_y4qbx"]
+
+[node name="MenuGameOver" type="Control" unique_id=1850839319]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_y4qbx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=608031064]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 1156.0
+offset_bottom = 655.0
+color = Color(0.36862746, 0.14117648, 0.17254902, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1636088310]
+layout_mode = 0
+offset_left = 54.0
+offset_top = -79.0
+offset_right = 1196.0
+offset_bottom = 725.0
+texture = ExtResource("1_jawqf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="." unique_id=1055723533]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 46.0
+offset_right = 916.0
+offset_bottom = 211.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 1, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_font_sizes/font_size = 120
+text = "GAME OVER"
+
+[node name="ButtonMainMenu" type="Button" parent="." unique_id=1850362848]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 490.0
+offset_right = 604.0
+offset_bottom = 608.0
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "MAIN MENU"
+flat = true
+
+[node name="ButtonReplay" type="Button" parent="." unique_id=982223666]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 490.0
+offset_right = 1039.0
+offset_bottom = 608.0
+theme_override_colors/font_color = Color(0.2509804, 0.8745098, 0.27450982, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8627451, 0.9490196, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+text = "REPLAY"
+flat = true
+
+[connection signal="pressed" from="ButtonMainMenu" to="." method="_load_main_menu"]
+[connection signal="pressed" from="ButtonReplay" to="." method="_replay_most_recent_level"]

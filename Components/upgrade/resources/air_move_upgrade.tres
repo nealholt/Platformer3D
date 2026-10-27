@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UpgradeResource" format=3 uid="uid://f8b8f5nj4sfu"]
+
+[ext_resource type="Texture2D" uid="uid://54sg34cdke4r" path="res://Assets/kenney_board-game-icons/pawn_skip.png" id="1_1ase4"]
+[ext_resource type="Script" uid="uid://bja28rtfjtiue" path="res://Components/upgrade/resources/upgrade_resource.gd" id="2_dxx4p"]
+
+[resource]
+script = ExtResource("2_dxx4p")
+upgrade_type = 7
+help_text = "wasd and arrow keys now\\nmove you while in the air"
+image = ExtResource("1_1ase4")
+text = "Air Move"
+color = Color(0, 0.7764706, 0, 1)
+metadata/_custom_type_script = "uid://bja28rtfjtiue"

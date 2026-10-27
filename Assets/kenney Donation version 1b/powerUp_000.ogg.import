@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvhhyoi28ki00"
+path="res://.godot/imported/powerUp_000.ogg-a5559f4818fe6243b90e999ac3b2304e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/kenney Donation version 1b/powerUp_000.ogg"
+dest_files=["res://.godot/imported/powerUp_000.ogg-a5559f4818fe6243b90e999ac3b2304e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
