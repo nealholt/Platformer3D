@@ -5,6 +5,12 @@ by BornCG
 https://www.youtube.com/playlist?list=PLda3VoSoc_TTp8Ng3C57spnNkOw3Hm_35
 extended by Neal Holtschulte
 
+Available on github:
+https://github.com/nealholt/Platformer3D
+
+Playable on itch.io:
+https://nealholt.itch.io/3d-platformer
+
 === Puzzle platformer:
 	Fastest time to pick up X number of coins
 	Choose route to different upgrades, branching path of upgrades, but chosen by moving in the world
