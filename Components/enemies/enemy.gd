@@ -5,8 +5,6 @@ extends CharacterBody3D
 @onready var sides_checker: Area3D = $SidesChecker
 @onready var top_checker: Area3D = $TopChecker
 
-@onready var sound_squash: AudioStreamPlayer = $SoundSquash
-
 @export var direction:Vector3 = Vector3.ZERO
 @export var turns_at_edges:bool = true ## Turn off for units that you want to walk down stairs
 @export var motionless:bool = false ## Turn on for units that you don't want to move
@@ -62,18 +60,20 @@ func turn_around() -> void:
 
 
 func _on_sides_checker_body_entered(body: Node3D) -> void:
-	SoundManager.play_enemy_sound()
+	print('enemy sides checker body entered') # TODO TESTING
+	#TODO TESTING SoundManager.play(SoundManager.SFX.DEATH_BY_ENEMY)
 	# If we struck the player, call player's die function
 	if body is Player:
 		body.die()
 
 
 func _on_top_checker_body_entered(body: Node3D) -> void:
+	print('enemy top checker body entered') # TODO TESTING
 	# If squashed by player, reset player's fall speed to zero.
 	if body is Player:
 		body.previous_fall_speed = 0.0
 	animation_player.play('squash')
-	sound_squash.play()
+	SoundManager.play(SoundManager.SFX.ENEMY_SQUASH)
 	body.bounce()
 	sides_checker.set_collision_mask_value(1, false)
 	top_checker.set_collision_mask_value(1, false)

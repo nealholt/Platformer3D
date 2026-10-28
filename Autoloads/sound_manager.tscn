@@ -9,6 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://bv5boectmq2ms" path="res://Assets/Music/Menu-RetroMystic.ogg" id="6_uukhq"]
 [ext_resource type="AudioStream" uid="uid://vmdwasxgy8ey" path="res://Assets/Music/Level-RetroBeat.ogg" id="7_nh2do"]
 [ext_resource type="AudioStream" uid="uid://pkamckfoiqyq" path="res://Assets/kenney Donation version 1b/whoosh_medium_004.ogg" id="7_om77l"]
+[ext_resource type="AudioStream" uid="uid://fyxersts6iwc" path="res://Assets/SoundEffects/strong_hit.wav" id="10_0kl6e"]
+[ext_resource type="AudioStream" uid="uid://v7amwcbybiqq" path="res://Assets/kenney_space-shooter-redux/sfx_shieldUp.ogg" id="11_q0m31"]
+[ext_resource type="AudioStream" uid="uid://cb4qda3bu855o" path="res://Assets/SoundEffects/mixkit-hard-pop-click-2364.wav" id="12_q0m31"]
 
 [node name="SoundManager" type="Control" unique_id=1945775151]
 layout_mode = 3
@@ -47,3 +50,14 @@ stream = ExtResource("6_uukhq")
 [node name="MusicLevel" type="AudioStreamPlayer" parent="." unique_id=1044314309]
 stream = ExtResource("7_nh2do")
 volume_db = -8.0
+
+[node name="SoundLanding" type="AudioStreamPlayer" parent="." unique_id=1806750422]
+stream = ExtResource("10_0kl6e")
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="." unique_id=1791120309]
+stream = ExtResource("11_q0m31")
+volume_db = -3.0
+
+[node name="SoundSquash" type="AudioStreamPlayer" parent="." unique_id=205175611]
+stream = ExtResource("12_q0m31")
+volume_db = -10.0

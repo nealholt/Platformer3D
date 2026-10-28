@@ -30,9 +30,6 @@ class_name Player extends CharacterBody3D
 @onready var player_reset_system: Node = $PlayerResetSystem
 @onready var state_machine: StateMachine = $StateMachine
 
-@onready var sound_landing: AudioStreamPlayer = $SoundLanding
-@onready var sound_jump: AudioStreamPlayer = $SoundJump
-
 @onready var impact_particles: GPUParticles3D = $ImpactParticles
 @onready var sprint_particles: GPUParticles3D = $SprintParticles
 
@@ -131,7 +128,7 @@ func _physics_process(delta: float) -> void:
 	
 	# If we fall below level, game over
 	if global_position.y < Level.minimum_height:
-		SoundManager.play_fall_sound()
+		# TODO TESTING SoundManager.play(SoundManager.SFX.DEATH_BY_FALL)
 		die()
 
 
@@ -199,7 +196,7 @@ func jump() -> void:
 		velocity.y = jump_velocity * sprint_jump_mult
 	else:
 		velocity.y = jump_velocity
-	sound_jump.play()
+	SoundManager.play(SoundManager.SFX.JUMP)
 
 # Enemy calls bounce. It's like jump, but witohut the noise
 func bounce() -> void:
@@ -326,8 +323,7 @@ func on_state_transition(old_state_name:String, new_state_name:String) -> void:
 			# Set particle count based on fall speed
 			impact_particles.amount = particle_count
 		# Play audio. Scale volume with fall speed, max zero
-		sound_landing.volume_db = min(0.0, -20.0 + previous_fall_speed)
-		sound_landing.play()
+		SoundManager.play_volume(SoundManager.SFX.LANDING, min(0.0, -20.0 + previous_fall_speed))
 	
 	#match new_state_name:
 		#'Idle':

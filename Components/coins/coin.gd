@@ -1,14 +1,22 @@
 class_name Coin extends Area3D
 
-const COIN_SCENE:PackedScene = preload("res://Components/coins/coin.tscn")
-
 @onready var animation: AnimationPlayer = $AnimationPlayer
 
 const ROT_SPEED :float = 100.0 # rotation speed
 
 
 static func new_coin(pos:Vector3) -> Coin:
-	var c:Coin = COIN_SCENE.instantiate()
+	# I was getting weird errors when coins were spawned from
+	# killed enemies, a pair of errors:
+	# Failed to instantiate scene state of "", node count is 0. Make sure the PackedScene resource is valid.
+	# and
+	# Required object "rp_child" is null.
+	# The only info I could find online was this
+	# https://forum.godotengine.org/t/failed-to-instantiate-scene-state-of-snake-body-tscn-node-count-is-0-make-sure-the-packedscene-resource-is-valid/70264
+	# where the person changed from preload to load, so
+	# that's what I did and it seems to have fixed the issue.
+	var coin_scene:PackedScene = load("res://Components/coins/coin.tscn")
+	var c:Coin = coin_scene.instantiate() 
 	Level.coin_node.add_child(c)
 	c.global_position = pos
 	return c
@@ -17,7 +25,8 @@ func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(delta * ROT_SPEED))
 
 func _on_body_entered(_body: Node3D) -> void:
-	SoundManager.play_coin_sound()
+	# TODO TESTING SoundManager.play(SoundManager.SFX.GAIN_COIN)
+	print('coin body entered') # TODO TESTING
 	Global.coins += 1
 	# Signal
 	Events.picked_coin.emit()

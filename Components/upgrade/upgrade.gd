@@ -10,11 +10,12 @@ func _ready() -> void:
 
 
 func _on_body_entered(body:Node3D) -> void:
-	if upgrade and body is Player:
-		upgrade.apply_upgrade(body)
-		Events.picked_upgrade.emit(upgrade.help_text)
+	if !is_instance_valid(upgrade) or !(body is Player):
+		return
+	upgrade.apply_upgrade(body)
+	Events.picked_upgrade.emit(upgrade.help_text)
 	# Play audio
-	SoundManager.play_upgrade_sound()
+	# TODO TESTING SoundManager.play(SoundManager.SFX.GAIN_UPGRADE)
 	# Turn off collisions to prevent double collision
 	set_collision_layer_value(3, false)
 	set_collision_mask_value(1, false)

@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://35u31dwm7lfb" path="res://Components/player/player.gd" id="1_d7wup"]
 [ext_resource type="ArrayMesh" uid="uid://1myvo1uero2j" path="res://Assets/Resources/robot_array_mesh.res" id="2_hk1pf"]
 [ext_resource type="PackedScene" uid="uid://ci1am0pyll08a" path="res://Components/camera/camera_control.tscn" id="3_hk1pf"]
-[ext_resource type="AudioStream" uid="uid://fyxersts6iwc" path="res://Assets/SoundEffects/strong_hit.wav" id="4_326v2"]
 [ext_resource type="Script" uid="uid://dqj2015kk75yb" path="res://Components/player/state_machine/state_machine_script.gd" id="5_cag22"]
-[ext_resource type="AudioStream" uid="uid://v7amwcbybiqq" path="res://Assets/kenney_space-shooter-redux/sfx_shieldUp.ogg" id="5_qdujt"]
 [ext_resource type="Script" uid="uid://br70vfv0x0iem" path="res://Components/player/state_machine/idle_state_script.gd" id="6_hd2uu"]
 [ext_resource type="Script" uid="uid://qqyq2kvu1gxj" path="res://Components/player/state_machine/fall_state_script.gd" id="7_vy5ma"]
 [ext_resource type="Script" uid="uid://bs4wrexaw8rjn" path="res://Components/player/state_machine/jump_state_script.gd" id="8_326v2"]
@@ -836,13 +834,6 @@ skeleton = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_cag22")
 
 [node name="CameraControl" parent="." unique_id=373835591 instance=ExtResource("3_hk1pf")]
-
-[node name="SoundLanding" type="AudioStreamPlayer" parent="." unique_id=189425960]
-stream = ExtResource("4_326v2")
-
-[node name="SoundJump" type="AudioStreamPlayer" parent="." unique_id=684991468]
-stream = ExtResource("5_qdujt")
-volume_db = -3.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=2023594580 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_cag22")
