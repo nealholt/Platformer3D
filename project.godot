@@ -21,6 +21,7 @@ Global="*uid://tib3787nvhjf"
 Events="*uid://cs5g8bxrbl3ut"
 SoundManager="*uid://bnfrj6xgptvu8"
 SaveSpeed="*uid://q5p44pw2nme"
+SceneLoader="*uid://cddcivrrr2ptk"
 
 [debug]
 

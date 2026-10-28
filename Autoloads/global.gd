@@ -10,8 +10,6 @@ var enemies_drop_coins:bool = false
 # and to transition to next level
 var most_recently_played : int
 
-var is_last_level:bool = false
-
 var level_completion_time :float ##seconds
 var level_number :int
 

@@ -108,11 +108,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Escape to main menu
-	if Input.is_action_just_pressed('ui_cancel'):
-		get_tree().change_scene_to_file("res://UI/menu_title.tscn")
-		return
-	
 	# Handle all other inputs. You don't want to escape to main
 	# menu and then run physics_process. If you try, you will
 	# get errors.
@@ -364,10 +359,7 @@ func die() -> void:
 		player_reset_system.restore()
 	else:
 		# Go to game over menu
-		get_tree().change_scene_to_file.call_deferred("res://UI/menu_game_over.tscn")
-	
-	# Reload current scene
-	#get_tree().reload_current_scene()
+		MainMenu.main_menu.load_lose_menu()
 
 
 func reset_sky_walk() -> void:
