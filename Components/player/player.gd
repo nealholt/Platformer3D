@@ -128,7 +128,7 @@ func _physics_process(delta: float) -> void:
 	
 	# If we fall below level, game over
 	if global_position.y < Level.minimum_height:
-		# TODO TESTING SoundManager.play(SoundManager.SFX.DEATH_BY_FALL)
+		SoundManager.play(SoundManager.SFX.DEATH_BY_FALL)
 		die()
 
 

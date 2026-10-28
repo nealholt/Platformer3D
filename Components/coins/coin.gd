@@ -27,7 +27,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(_body: Node3D) -> void:
 	# Play sound and randomize pitch
 	SoundManager.play(SoundManager.SFX.GAIN_COIN, -0.2, 0.0)
-	print('coin body entered') # TODO TESTING
 	Global.coins += 1
 	# Signal
 	Events.picked_coin.emit()

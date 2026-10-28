@@ -70,12 +70,12 @@ func _load_menu_generic() -> void:
 	# Release the mouse
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	# Play music
-	# TODO TESTING SoundManager.stop(SoundManager.SFX.LEVEL_MUSIC)
-	# TODO TESTING if !SoundManager.is_playing(SoundManager.SFX.MENU_MUSIC):
-	# TODO TESTING 	SoundManager.play(SoundManager.SFX.MENU_MUSIC)
+	SoundManager.stop(SoundManager.SFX.LEVEL_MUSIC)
+	if !SoundManager.is_playing(SoundManager.SFX.MENU_MUSIC):
+		SoundManager.play(SoundManager.SFX.MENU_MUSIC)
 
 func load_main_menu_button() -> void:
-	# TODO TESTING SoundManager.play(SoundManager.SFX.BUTTON_PRESS)
+	SoundManager.play(SoundManager.SFX.BUTTON_PRESS)
 	_load_main_menu()
 
 func _load_main_menu() -> void:
@@ -129,8 +129,8 @@ func unload_level() -> void:
 		c.queue_free()
 
 func _load_level(level_number:int) -> void:
-	#TODO TESTING SoundManager.stop(SoundManager.SFX.MENU_MUSIC)
-	#TODO TESTING SoundManager.play(SoundManager.SFX.BUTTON_PRESS)
+	SoundManager.stop(SoundManager.SFX.MENU_MUSIC)
+	SoundManager.play(SoundManager.SFX.BUTTON_PRESS)
 	unload_level()
 	_hide_menus()
 	var level_path :String = "res://Levels/level_%d.tscn" % level_number

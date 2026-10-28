@@ -40,7 +40,7 @@ func _ready() -> void:
 	# Reset enemies to NOT drop coins
 	Global.enemies_drop_coins = false
 	# Play music
-	# TODO TESTING SoundManager.play.call_deferred(SoundManager.SFX.LEVEL_MUSIC)
+	SoundManager.play(SoundManager.SFX.LEVEL_MUSIC)
 	# Only for tutorials:
 	if help:
 		help._display_help_text.call_deferred('ws keys or forward/back\n arrow keys to move')

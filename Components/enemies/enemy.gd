@@ -60,19 +60,17 @@ func turn_around() -> void:
 
 
 func _on_sides_checker_body_entered(body: Node3D) -> void:
-	print('enemy sides checker body entered') # TODO TESTING
-	#TODO TESTING SoundManager.play(SoundManager.SFX.DEATH_BY_ENEMY)
+	SoundManager.play(SoundManager.SFX.DEATH_BY_ENEMY)
 	# If we struck the player, call player's die function
 	if body is Player:
 		body.die()
 
 
 func _on_top_checker_body_entered(body: Node3D) -> void:
-	print('enemy top checker body entered') # TODO TESTING
 	# If squashed by player, reset player's fall speed to zero.
 	if body is Player:
 		body.previous_fall_speed = 0.0
-	animation_player.play('squash')
+	animation_player.play('squash', -0.1, 0.1)
 	SoundManager.play(SoundManager.SFX.ENEMY_SQUASH)
 	body.bounce()
 	sides_checker.set_collision_mask_value(1, false)
