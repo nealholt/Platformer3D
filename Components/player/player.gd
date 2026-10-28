@@ -196,7 +196,8 @@ func jump() -> void:
 		velocity.y = jump_velocity * sprint_jump_mult
 	else:
 		velocity.y = jump_velocity
-	SoundManager.play(SoundManager.SFX.JUMP)
+	# Play sound and randomize pitch
+	SoundManager.play(SoundManager.SFX.JUMP, -0.15, 0.0)
 
 # Enemy calls bounce. It's like jump, but witohut the noise
 func bounce() -> void:

@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 	rotate_y(deg_to_rad(delta * ROT_SPEED))
 
 func _on_body_entered(_body: Node3D) -> void:
-	# TODO TESTING SoundManager.play(SoundManager.SFX.GAIN_COIN)
+	# Play sound and randomize pitch
+	SoundManager.play(SoundManager.SFX.GAIN_COIN, -0.2, 0.0)
 	print('coin body entered') # TODO TESTING
 	Global.coins += 1
 	# Signal

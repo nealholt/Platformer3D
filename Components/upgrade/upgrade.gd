@@ -14,8 +14,8 @@ func _on_body_entered(body:Node3D) -> void:
 		return
 	upgrade.apply_upgrade(body)
 	Events.picked_upgrade.emit(upgrade.help_text)
-	# Play audio
-	# TODO TESTING SoundManager.play(SoundManager.SFX.GAIN_UPGRADE)
+	# Play sound and randomize pitch
+	# TODO TESTING SoundManager.play(SoundManager.SFX.GAIN_UPGRADE, -0.1, 0.0)
 	# Turn off collisions to prevent double collision
 	set_collision_layer_value(3, false)
 	set_collision_mask_value(1, false)
