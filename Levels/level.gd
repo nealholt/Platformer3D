@@ -47,19 +47,7 @@ func _ready() -> void:
 	# Reset level completion time
 	Global.level_completion_time = 0.0
 	Global.level_number = this_level
-	# TODO TESTING
-	#cache_particles.call_deferred()
 
-
-# TODO TESTING
-func cache_particles() -> void:
-	var camera: Camera3D = get_viewport().get_camera_3d()
-	var instance:ParticlesCache = load("res://Components/particles_cache/particles_cache.tscn").instantiate()
-	add_child(instance)
-	# camera.global_basis.z points backward, so subtracting it
-	# places the node 20 meters forward from the camera.
-	instance.global_position = camera.global_position - camera.global_basis.z * 20.0
-	instance.spawn_particles.call_deferred()
 
 # Update and display elapsed level time
 func _process(delta: float) -> void:
