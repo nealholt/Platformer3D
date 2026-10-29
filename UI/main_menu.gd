@@ -25,6 +25,7 @@ static var main_menu:MainMenu = null
 # These are used only on win screen:
 @onready var time_background:ColorRect = $MenuGameWin/ColorRect2
 @onready var time_label:Label = $MenuGameWin/TimeContainer/Label
+@onready var button_next_level: Button = $MenuGameWin/ButtonNextLevel
 
 var fullscreen:bool = true
 
@@ -109,6 +110,10 @@ func load_win_menu() -> void:
 	else:
 		var best:float = SaveSpeed.get_level_time(Global.level_number)
 		time_label.text += '\nBest time:\n'+Global.get_elapsed_time_string(best)
+	# Level 2 is the last level so only display next level button
+	# if there is a next level
+	button_next_level.visible = Global.level_number < 2
+
 
 func load_lose_menu() -> void:
 	_load_menu_generic()
