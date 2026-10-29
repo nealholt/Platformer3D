@@ -1,26 +1,10 @@
 [gd_scene format=3 uid="uid://0skyshereddl"]
 
 [ext_resource type="Script" uid="uid://y0j8jhig02kf" path="res://Components/bounce_zone/bounce_zone.gd" id="1_sm8vl"]
+[ext_resource type="Material" uid="uid://biin4fmxkfm2j" path="res://materials/particles/bounce_zone_particles.tres" id="2_eo8w5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_erp8q"]
 size = Vector3(2, 1, 4)
-
-[sub_resource type="Curve" id="Curve_rp5ft"]
-_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), -1.3579923, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_havj5"]
-curve = SubResource("Curve_rp5ft")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_erp8q"]
-lifetime_randomness = 1.0
-emission_shape_scale = Vector3(0.8, 0.1, 1.8)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 9.8, 0)
-scale_min = 0.59999996
-scale_max = 0.59999996
-scale_curve = SubResource("CurveTexture_havj5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mbm2"]
 shading_mode = 0
@@ -49,7 +33,7 @@ shape = SubResource("BoxShape3D_erp8q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 cast_shadow = 0
 amount = 64
-process_material = SubResource("ParticleProcessMaterial_erp8q")
+process_material = ExtResource("2_eo8w5")
 draw_pass_1 = SubResource("SphereMesh_5feyy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

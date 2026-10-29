@@ -28,16 +28,20 @@ static var main_menu:MainMenu = null
 
 var fullscreen:bool = true
 
+
 func _ready() -> void:
 	# Make this scene statically accessible
 	if main_menu:
 		push_error('ERROR: Unique static MainMenu reference has already been set. This should only ever get set once.')
 	main_menu = self
+	
 	# Set display to fullscreen. When I tried to set
 	# fullscreen as the default in project settings,
 	# the toggle button was broken, but this way it works.
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
 	_load_main_menu()
+
 
 func _unhandled_input(event:InputEvent) -> void:
 	if event is InputEventKey:

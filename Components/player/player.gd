@@ -102,6 +102,8 @@ func _ready() -> void:
 	state_machine.transitioned.connect(on_state_transition)
 	animation_player.play('idle')
 	set_camera_control.call_deferred(can_rotate_camera)
+	# Cache particles to avoid performance hit later on.
+	cache_particles.call_deferred()
 
 
 func _physics_process(delta: float) -> void:
@@ -395,3 +397,49 @@ func handle_rigid_body_collisions() -> void:
 		# bodies.
 		if collider is RigidBody3D and not collider.is_in_group('no_impulse'):
 			collider.apply_central_impulse(-collision.get_normal() * collision_force)
+
+# Run all particles once to cache them, to avoid a performance hit
+# the first time particle effects occur in the game.
+# I was running into issue on the browser export version of the
+# game where the game would freeze up the first time the sprint
+# particles emitted. I tried to suss out how to solve the
+# problem and found these resources:
+# https://www.reddit.com/r/SoloDevelopment/comments/kyj6tf/godot_particles_lag_when_displayed_the_first_time/
+# https://www.youtube.com/watch?v=kbDj9V2MZvw
+# But those were both insufficient and so I asked Reddit:
+# https://www.reddit.com/r/godot/comments/1xi8ol4/comment/19rthz3yiwlol/
+# Ultimately I decided on this hack of simply running all the 
+# player's particles once and luckily enough this automatically
+# occurred during the loading screen, so this is the solution
+# I'm sticking with for now.
+func cache_particles() -> void:
+	# Get all particle children
+	var arr:Array[GPUParticles3D] = []
+	for c:Node in get_children():
+		if c is GPUParticles3D:
+			arr.push_back(c)
+	# Emit all particles once to cache them
+	var default_emitting:Array[bool]
+	var default_one_shot:Array[bool]
+	for particles:GPUParticles3D in arr:
+		# Backup original settings
+		default_emitting.push_back(particles.emitting)
+		default_one_shot.push_back(particles.one_shot)
+		# Set up to run once
+		particles.emitting = true
+		particles.one_shot = true
+	# Wait on all particles to finish
+	while true:
+		var any_emitting: bool = false
+		for particles: GPUParticles3D in arr:
+			if particles.emitting:
+				any_emitting = true
+				break
+		if not any_emitting:
+			break
+		await get_tree().process_frame
+	# Restore particle settings
+	for i:int in arr.size():
+		var particles:GPUParticles3D = arr[i]
+		particles.emitting = default_emitting[i]
+		particles.one_shot = default_one_shot[i]

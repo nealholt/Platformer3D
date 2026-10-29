@@ -1,0 +1,18 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://biin4fmxkfm2j"]
+
+[sub_resource type="Curve" id="Curve_rp5ft"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.1), -1.3579923, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_havj5"]
+curve = SubResource("Curve_rp5ft")
+
+[resource]
+lifetime_randomness = 1.0
+emission_shape_scale = Vector3(0.8, 0.1, 1.8)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 9.8, 0)
+scale_min = 0.59999996
+scale_max = 0.59999996
+scale_curve = SubResource("CurveTexture_havj5")

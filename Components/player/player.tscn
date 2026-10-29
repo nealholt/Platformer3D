@@ -8,7 +8,9 @@
 [ext_resource type="Script" uid="uid://qqyq2kvu1gxj" path="res://Components/player/state_machine/fall_state_script.gd" id="7_vy5ma"]
 [ext_resource type="Script" uid="uid://bs4wrexaw8rjn" path="res://Components/player/state_machine/jump_state_script.gd" id="8_326v2"]
 [ext_resource type="Script" uid="uid://cncjun5fhtcuh" path="res://Components/player/state_machine/run_state_script.gd" id="9_qdujt"]
+[ext_resource type="Material" uid="uid://cogaid62uxp75" path="res://materials/particles/player_impact_particles.tres" id="10_batb3"]
 [ext_resource type="Script" uid="uid://bdj0irh76rn45" path="res://Components/player/state_machine/walk_state_script.gd" id="10_isols"]
+[ext_resource type="Material" uid="uid://dhm6tywsparvu" path="res://materials/particles/player_sprint_particles.tres" id="12_dhqvy"]
 [ext_resource type="QuadMesh" uid="uid://c1mrfwye58cbp" path="res://Assets/Resources/smoke.tres" id="12_qdujt"]
 [ext_resource type="PackedScene" uid="uid://bmakf3f6p5utl" path="res://Components/player_reset/player_reset_system.tscn" id="13_isols"]
 [ext_resource type="Script" uid="uid://d2qhkb32mbp7i" path="res://Components/player/foot_area.gd" id="14_batb3"]
@@ -683,58 +685,6 @@ _data = {
 &"waveArm": SubResource("Animation_mt5nb")
 }
 
-[sub_resource type="Curve" id="Curve_isols"]
-_data = [Vector2(0, 1), 0.0, -0.67327005, 0, 0, Vector2(1, 0), -0.9691015, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_qdujt"]
-curve = SubResource("Curve_isols")
-
-[sub_resource type="Curve" id="Curve_326v2"]
-_data = [Vector2(0, 0.3), 0.0, 0.8800484, 0, 0, Vector2(1, 1), 0.6645263, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_batb3"]
-curve = SubResource("Curve_326v2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_isols"]
-lifetime_randomness = 0.5
-emission_shape_scale = Vector3(1, 0, 1)
-spread = 180.0
-flatness = 1.0
-initial_velocity_min = 10.0
-initial_velocity_max = 10.0
-gravity = Vector3(0, 0, 0)
-scale_min = 0.5
-scale_max = 0.5
-scale_curve = SubResource("CurveTexture_batb3")
-alpha_curve = SubResource("CurveTexture_qdujt")
-
-[sub_resource type="Curve" id="Curve_batb3"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.8731008, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_isols"]
-curve = SubResource("Curve_batb3")
-
-[sub_resource type="Curve" id="Curve_vy5ma"]
-_data = [Vector2(1e-05, 0.1), 0.0, 1.3892976, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_vy5ma"]
-curve = SubResource("Curve_vy5ma")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_erp8q"]
-lifetime_randomness = 1.0
-emission_shape_scale = Vector3(1, 0, 1)
-emission_shape = 1
-emission_sphere_radius = 0.3
-gravity = Vector3(0, 0, 0)
-scale_min = 0.5
-scale_max = 0.5
-scale_curve = SubResource("CurveTexture_vy5ma")
-alpha_curve = SubResource("CurveTexture_isols")
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_erp8q"]
 radius = 0.25
 
@@ -860,7 +810,7 @@ emitting = false
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_isols")
+process_material = ExtResource("10_batb3")
 draw_pass_1 = ExtResource("12_qdujt")
 
 [node name="SprintParticles" type="GPUParticles3D" parent="." unique_id=777983340]
@@ -868,7 +818,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41503906, 0)
 emitting = false
 amount = 32
 lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_erp8q")
+process_material = ExtResource("12_dhqvy")
 draw_pass_1 = ExtResource("12_qdujt")
 
 [node name="PlayerResetSystem" parent="." unique_id=456618431 instance=ExtResource("13_isols")]

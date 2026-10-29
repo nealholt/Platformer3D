@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bi2ntplhkntky"]
+
+[ext_resource type="Script" uid="uid://dquhnqpypa43s" path="res://Components/particles_cache/particles_cache.gd" id="1_kq6m3"]
+
+[node name="ParticlesCache" type="Node3D" unique_id=765875470]
+script = ExtResource("1_kq6m3")
